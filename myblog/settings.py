@@ -36,7 +36,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'apps.blog',
+<<<<<<< HEAD
     'django_summernote',
+=======
+>>>>>>> master
 ]
 
 MIDDLEWARE = [
@@ -111,6 +114,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
+<<<<<<< HEAD
 
 LANGUAGE_CODE = 'zh-hans'  # 简体中文
 
@@ -119,6 +123,10 @@ LANGUAGE_CODE = 'zh-hans'
 TIME_ZONE = 'Asia/Shanghai'
 
 
+=======
+LANGUAGE_CODE = 'zh-hans'  # 简体中文
+
+>>>>>>> master
 TIME_ZONE = 'Asia/Shanghai'  # 时间上海
 PAGE_NUM = 3
 USE_I18N = True
