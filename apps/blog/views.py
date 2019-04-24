@@ -25,7 +25,17 @@ def detail(request, pk):  # 查看文章详情
     post = get_object_or_404(Article, pk=pk)
     post.viewed()  # 更新浏览次数
     tags = post.tags.all()  # 获取文章对应所有标签
-    return render(request, 'blog/post.html', {'post': post, 'tags': tags,'category_list': categories})
+    next_post = post.next_article()  # 上一篇对象
+    prev_post = post.prev_article()  # 上一篇对象
+    return render(
+        request, 'blog/post.html',
+        {
+            'post': post,
+            'tags': tags,
+            'category_list': categories,
+            'next_post': next_post,
+            'prev_post': prev_post,
+        })
 
 
 def search_category(request, pk):  # 分类搜索
@@ -39,7 +49,13 @@ def search_category(request, pk):  # 分类搜索
         post_list = paginator.page(1)
     except EmptyPage:
         post_list = paginator.page(paginator.num_pages)
-    return render(request, 'blog/category.html',{'post_list': post_list, 'category_list': categories, 'category': category})
+    return render(
+        request, 'blog/category.html',
+        {
+              'post_list': post_list,
+              'category_list': categories,
+              'category': category
+        })
 
 
 def search_tag(request, tag):  # 标签搜索
