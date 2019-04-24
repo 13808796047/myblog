@@ -24,6 +24,8 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('article/', include('apps.blog.urls')),
     path('summernote/', include('django_summernote.urls')),
+    path('jet/', include('jet.urls', 'jet')),
+    path('jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
