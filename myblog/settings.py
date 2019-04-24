@@ -113,14 +113,11 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
 
-
 LANGUAGE_CODE = 'zh-hans'  # 简体中文
 
 LANGUAGE_CODE = 'zh-hans'
 
 TIME_ZONE = 'Asia/Shanghai'
-
-
 
 LANGUAGE_CODE = 'zh-hans'  # 简体中文
 
@@ -139,3 +136,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
+# 添加附件(如图片、视频、文件等)的存放路径
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')

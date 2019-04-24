@@ -21,8 +21,9 @@ def home(request):  # 主页
 
 def detail(request, pk):  # 查看文章详情
     post = get_object_or_404(Article, pk=pk)
-    context = {'post': post}
-    return render(request, 'blog/post.html', context)
+    post.viewed()  # 更新浏览次数
+    tags = post.tags.all()  # 获取文章对应所有标签
+    return render(request, 'blog/post.html', {'post':post,'tags':tags})
     # return render(request, 'blog/post.html', locals())
     # post = get_object_or_404(Article, pk=article_id)
     # post.viewed()  # 更新浏览次数
