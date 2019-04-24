@@ -52,9 +52,9 @@ def search_category(request, pk):  # 分类搜索
     return render(
         request, 'blog/category.html',
         {
-              'post_list': post_list,
-              'category_list': categories,
-              'category': category
+            'post_list': post_list,
+            'category_list': categories,
+            'category': category
         })
 
 
@@ -70,3 +70,21 @@ def search_tag(request, tag):  # 标签搜索
     except EmptyPage:
         post_list = paginator.page(paginator.num_pages)
     return render(request, 'blog/tag.html', {'post_list': post_list, 'category_list': categories, 'tag': tag})
+
+
+def archives(request, year, month, day):
+    posts = Article.objects.filter(pub_time__year=year, pub_time__month=month, pub_time__day=day).order_by('-pub_time')
+    paginator = Paginator(posts, settings.PAGE_NUM)  # 每页显示数量
+    try:
+        page = request.GET.get('page')  # 获取URL中page参数的值
+        post_list = paginator.page(page)
+    except PageNotAnInteger:
+        post_list = paginator.page(1)
+    except EmptyPage:
+        post_list = paginator.page(paginator.num_pages)
+    return render(request, 'blog/archive.html', {
+        'post_list': post_list,
+        'category_list': categories,
+        'months': months,
+        'year_month_day': year + '年' + month + '月' + day + '日'
+    })
