@@ -12,7 +12,7 @@
                        style="text-decoration: none">{{ post.category }}</a>&nbsp;&nbsp;
                     <i class="fa fa-tags" aria-hidden="true"></i>
                     {% for tag in tags %}
-                        <a href=""
+                        <a href="{% url 'blog:search_tag' tag %}"
                            style="text-decoration: none">{{ tag }}</a>
                     {% endfor %}&nbsp;&nbsp;
                     <i class="fa fa-eye" aria-hidden="true"></i>&nbsp;{{ post.views }}次浏览

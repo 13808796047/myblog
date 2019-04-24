@@ -156,7 +156,7 @@ TIME_ZONE = 'Asia/Shanghai'
 LANGUAGE_CODE = 'zh-hans'  # 简体中文
 
 TIME_ZONE = 'Asia/Shanghai'  # 时间上海
-PAGE_NUM = 3
+PAGE_NUM = 2
 USE_I18N = True
 
 USE_L10N = True
@@ -194,3 +194,24 @@ SUMMERNOTE_CONFIG = {
 
 
 }
+# 是否展开所有菜单
+JET_SIDE_MENU_COMPACT = True  # 菜单不是很多时建议为TRUE
+
+JET_SIDE_MENU_ITEMS = [  # A list of application or custom item dicts
+    {'label': '内容管理', 'app_label': 'blog', 'items': [
+        {'name': 'article'},
+        {'name': 'tag'},
+        {'name': 'category'},
+    ]},
+
+    {'label': '附件管理', 'app_label': 'django_summernote', 'items': [
+        {'label': '附件列表', 'name': 'attachment'},
+
+    ]},
+
+    {'label': '权限管理', 'items': [
+        {'name': 'auth.user', 'permissions': ['auth.user']},
+        {'name': 'auth.group', 'permissions': ['auth.user']},
+
+    ]},
+]

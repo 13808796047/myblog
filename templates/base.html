@@ -15,7 +15,7 @@
     <!--左侧边栏 开始-->
     <div class="sidebar pure-u-1 pure-u-md-1-4">
         <div class="header">
-            <h1 class="brand-title"><a href="{% url 'home' %}" style="text-decoration: none">金笔头博客</a></h1>
+            <h1 class="brand-title"><a href="/" style="text-decoration: none">金笔头博客</a></h1>
             <br>
             <h2 class="brand-tagline">Love Learning, Love Sharing...</h2>
             <br>
@@ -23,7 +23,7 @@
                 <ul class="nav-list">
                     <li class="nav-item">
                         {% for category in category_list %}
-                            <a class="pure-button" href="{% url 'category_menu' id=category.id %}"
+                            <a class="pure-button" href="{% url 'blog:search_category' category.id %}"
                                style="text-decoration: none">{{ category }}</a>
                         {% endfor %}&nbsp;
                     </li>
