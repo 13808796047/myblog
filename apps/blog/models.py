@@ -1,8 +1,5 @@
 from django.db import models
-<<<<<<< HEAD
 
-=======
->>>>>>> master
 from django.utils.timezone import now
 
 
@@ -75,7 +72,3 @@ class Article(models.Model):
         verbose_name_plural = '文章列表'  # 指定后台显示模型复数名称
         db_table = 'article'
         get_latest_by = 'created_time'
-<<<<<<< HEAD
-
-=======
->>>>>>> master

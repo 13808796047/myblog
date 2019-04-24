@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 
-=======
->>>>>>> master
 from django.shortcuts import render, HttpResponse, get_object_or_404
 from .models import Article
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
@@ -32,7 +29,4 @@ def detail(request, pk):  # 查看文章详情
     # tags = post.tags.all()  # 获取文章对应所有标签
     # context = {'post': post, 'tags': tags}
     # return render(request, 'post.html', context)
-<<<<<<< HEAD
 
-=======
->>>>>>> master
